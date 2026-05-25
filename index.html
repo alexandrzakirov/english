@@ -265,6 +265,15 @@ textarea{resize:vertical;min-height:72px}
 </div>
 
 <script>
+
+// Token setup
+(function(){
+  let t=localStorage.getItem('gh_token');
+  if(!t){
+    t=prompt('Введи GitHub токен (один раз):','');
+    if(t&&t.trim()){localStorage.setItem('gh_token',t.trim());}
+  }
+})();
 const TOKEN=localStorage.getItem('gh_token')||'';
 const REPO='alexandrzakirov/english';
 const FILE='data.json';
